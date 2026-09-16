@@ -23,6 +23,8 @@ export const dictionary = {
     work: { es: "Trabajo", en: "Work" },
     contact: { es: "Contacto", en: "Contact" },
     getInTouch: { es: "Hablemos", en: "Get in Touch" },
+    madeWith: { es: "Hecho con", en: "Made with" },
+    by: { es: "por", en: "by" },
   },
   hero: {
     role: {

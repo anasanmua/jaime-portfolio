@@ -4,7 +4,7 @@ import React from "react"
 
 import Link from "next/link"
 import { useState, useCallback } from "react"
-import { Menu, X } from "lucide-react"
+import { Menu, X, ArrowUpRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useLang } from "@/lib/i18n-provider"
 import { dictionary, type Locale } from "@/lib/i18n"
@@ -47,14 +47,30 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <nav className="container mx-auto px-6 h-16 flex items-center justify-between">
-        <Link
-          href="/"
-          className="flex items-center gap-2.5 font-display text-lg font-bold uppercase tracking-wide text-foreground"
-        >
-          <span className="grid h-8 w-8 place-items-center clip-notch border border-primary/50 bg-primary/10 font-mono text-xs text-primary">
-            JRG
-          </span>
-        </Link>
+        <div className="flex items-center gap-6">
+          <Link
+            href="/"
+            aria-label="Jaime Rosado Garcie — Home"
+            className="flex items-center justify-center font-display text-lg font-bold uppercase tracking-wide text-foreground"
+          >
+            <span className="grid h-10 w-10 place-items-center clip-notch border border-primary/50 bg-primary/10 font-mono text-sm text-primary">
+              JRG
+            </span>
+          </Link>
+          <a
+            href="https://anasanchez.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group hidden lg:inline-flex items-center gap-2.5 clip-notch border border-primary/40 bg-primary/10 px-5 py-2.5 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-foreground"
+            aria-label="Made with love by Ana — visit portfolio"
+          >
+            {t(dictionary.nav.madeWith)}
+            <span className="text-primary transition-transform group-hover:scale-125" aria-hidden>♥</span>
+            {t(dictionary.nav.by)}
+            <span className="text-primary">Ana</span>
+            <ArrowUpRight className="h-3 w-3" />
+          </a>
+        </div>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
@@ -79,6 +95,8 @@ export function Header() {
             <span className="text-border">/</span>
             <span className={cn("px-2.5 py-1.5 transition-colors", locale === "en" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground")}>EN</span>
           </button>
+
+
 
           <Button asChild size="sm" className="clip-notch">
             <a href="#contact" onClick={(e) => scrollToSection(e, "#contact")}>
