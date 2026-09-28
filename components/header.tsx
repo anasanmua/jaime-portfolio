@@ -58,7 +58,7 @@ export function Header() {
             </span>
           </Link>
           <a
-            href="https://anasanchez.vercel.app/"
+            href="https://anasanchezstudio.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="group hidden lg:inline-flex items-center gap-2.5 clip-notch border border-primary/40 bg-primary/10 px-5 py-2.5 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-foreground"
